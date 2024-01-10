@@ -1,0 +1,11 @@
+---
+const {color,href,download}=Astro.props
+
+let borderColor=color||'border-white-500'
+let downloads=download||'JoseCv'
+---
+
+
+<a href=`${href}` download=`${downloads}` target="_blank" rel="noopener noreferrer" class=`flex justify-center items-center py-1 px-2 gap-x-2 rounded-full border ${borderColor} transition-all ease-in-out duration-300 transform hover:scale-125`>
+    <slot/>
+</a>

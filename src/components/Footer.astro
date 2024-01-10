@@ -1,0 +1,24 @@
+---
+import Email from '../icons/email.astro'
+import Button from './Button.astro'
+import Linkedin from '../icons/linkedin.astro'
+import Github from '../icons/Github.astro'
+
+const {href}=Astro.props
+---
+
+
+<section class="flex justify-between items-center w-[1120px] mx-auto my-80 min-h-32" id="Contact">
+    
+    <div class="flex gap-x-4">
+
+        <p>jose.morocho.back@gmail.com</p>
+        <a href=`mailto:${href}` target="_blank" rel="noopener noreferrer" class=`flex justify-center items-center py-1 px-2 gap-x-2 rounded-full border transition-all ease-in-out duration-300 transform hover:scale-125`>
+            <Email></Email>
+        </a>
+    </div>
+    <div class="flex gap-x-4">
+        <Button href="https://www.linkedin.com/in/joseback"><Linkedin></Linkedin></Button>
+        <Button href="https://github.com/JW0FSSS"><Github></Github></Button>
+    </div>
+</section>

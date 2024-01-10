@@ -1,0 +1,45 @@
+---
+const PROJECTS=[
+    {
+        title:'Porfolio web',
+        description:'My portfolio web....',
+        tags:['Js','Astro','TailwindCss'],
+        image:'../../public/web.png' ,
+        gitgub:'https://github.com/JW0FSSS/Portfolio'
+    }
+    ,{
+    title:'Testing node and docker',
+    description:'Project where im using node and docker for testing database mysql with docker....',
+    tags:['NodeJs','Docker','MySql'],
+    image:'../../public/Mysql.png',
+    gitgub:'https://github.com/JW0FSSS/MYSQL'
+},
+{
+    title:'Future Project',
+    description:'Comming soon....',
+    tags:['?','?','?'],
+    image:'https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2011/07/25/110725144827_sp_question_mark_304x171_other_nocredit.jpg',   
+    gitgub:'https://github.com/JW0FSSS/Ba-ck'
+}
+
+
+]
+
+---
+{PROJECTS.map(project => (
+    <article class="border border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer">
+        <a href={project.gitgub} target="_blank" rel="noopener noreferrer">
+            <img src={project.image} alt="Captura del proyecto"  class="rounded-xl"/>
+            <h1 class="my-2 text-xl">{project.title}</h1>
+            <p class="my-2">{project.description}</p>
+            <ul class="flex gap-x-3">
+                {project.tags.map(tag => (
+                    <li >
+                        {tag}    
+                        </li>
+                        ))}
+                        </ul>
+        </a>
+        
+    </article>
+))}
