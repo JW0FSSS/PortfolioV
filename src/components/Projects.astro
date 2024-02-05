@@ -1,50 +1,104 @@
 ---
+const tech=[
+    {
+        id:1,
+        name:'JS',
+        image:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png'
+    },
+    {
+        id:2,
+        name:'Astro',
+        image:'https://static.frontendmasters.com/assets/courses/2023-08-24-astro/thumb.webp'
+    },
+    {
+        id: 3,
+        name: 'Tailwind',
+        image: 'https://logowik.com/content/uploads/images/tailwind-css3232.logowik.com.webp'
+    },
+    {
+        id: 4,
+        name: 'Node js',
+        image: 'https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png'
+    },
+    {
+        id: 5,
+        name: 'Docker',
+        image: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png'
+    },
+    {
+        id: 6,
+        name: 'Mysql',
+        image: 'https://pngimg.com/d/mysql_PNG11.png'
+    },
+    {
+        id: 7,
+        name: 'Sequelize',
+        image: 'https://seeklogo.com/images/S/sequelize-logo-9A5075DB9F-seeklogo.com.png'
+    },
+    {
+        id: 8,
+        name: 'React',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/640px-React_Logo_SVG.svg.png'
+    },
+    {
+        id: 9,
+        name: 'Zustand',
+        image: 'https://tsh.io/wp-content/uploads/2023/02/zustand-logo.png'
+    },
+    {
+        id: 10,
+        name: 'Mongodb',
+        image: 'https://newrelic.com/sites/default/files/2021-10/mongo_logo.jpg'
+    }
+]
+
 const PROJECTS=[
     {
+        title:'Payment',
+        description:'Payment using Zustand with Stripe',
+        tags:tech.filter(e=>e.name=='JS'||e.name=='React'||e.name=='Tailwind'||e.name=='Zustand'||e.name=='Node js'),
+        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1707144183/cart_wcfbis.png',   
+        gitgub:'https://github.com/JW0FSSS/Cart-Zustand'
+    },
+    {
         title:'Porfolio web',
-        description:'My portfolio web....',
-        tags:['Js','Astro','TailwindCss'],
+        description:'My portfolio web',
+        tags:tech.filter(e=>e.name=='JS'||e.name=='Astro'||e.name=='Tailwind'),
         image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914832/fotos/rjefa7om5ggyv0glc4mb.png' ,
-        gitgub:'https://github.com/JW0FSSS/Portfolio'
-    }
+        gitgub:'https://github.com/JW0FSSS/PortfolioV'
+    },
+    {
+        title:'Authenticate',
+        description:'Jwt authenticate',
+        tags:tech.filter(e=>e.name=='Sequelize'||e.name=='Node js'||e.name=='Docker'),
+        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',   
+        gitgub:'https://github.com/JW0FSSS/Authenticate'
+    },
     ,{
     title:'Testing node and docker',
-    description:'Project where im using node and docker for testing database mysql with docker....',
-    tags:['NodeJs','Docker','MySql'],
+    description:'Project where im using node and docker for testing database mysql with docker',
+    tags:tech.filter(e=>e.name=='Node js'||e.name=='Docker'||e.name=='Mysql'),
     image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',
     gitgub:'https://github.com/JW0FSSS/MYSQL'
-},
-{
-    title:'Jwt',
-    description:'Jwt authenticate....',
-    tags:['Sequelize','NodeJs','Docker'],
-    image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',   
-    gitgub:'https://github.com/JW0FSSS/Authenticate'
-},
-{
-    title:'Future Project',
-    description:'Comming soon....',
-    tags:['?','?','?'],
-    image:'https://ichef.bbci.co.uk/news/640/amz/worldservice/live/assets/images/2011/07/25/110725144827_sp_question_mark_304x171_other_nocredit.jpg',   
-    gitgub:'https://github.com/JW0FSSS/Ba-ck'
 }
-
 ]
 
 ---
 {PROJECTS.map(project => (
-    <article class="border border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer">
+    <article class="border border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer hover:backdrop-blur hover:backdrop-filter-[10px] hover:bg-black/90">
         <a href={project.gitgub} target="_blank" rel="noopener noreferrer">
-            <img src={project.image} alt="Captura del proyecto"  class="rounded-xl"/>
-            <h1 class="my-2 text-xl ">{project.title}</h1>
-            <p class="my-2">{project.description}</p>
-            <ul class="flex gap-x-3">
-                {project.tags.map(tag => (
-                    <li >
-                        {tag}    
-                        </li>
+            <div class="w-11/12 mx-auto">
+                <img src={project.image} alt="Captura del proyecto"  class="rounded-xl w-full object-cover"/>
+            </div>
+            <div class="w-11/12 mx-auto">
+                <h1 class="my-2 text-xl ">{project.title}</h1>
+                <p class="my-2">{project.description}</p>
+                <div class="flex gap-x-3">
+                    {project.tags.map(tag => (
+                        <img src={`${tag.image}`} alt="" class="rounded-full w-10 lg:w-12 object-cover"/>
                         ))}
-                        </ul>
+            </div>
+            </div>
         </a>
         
     </article>
