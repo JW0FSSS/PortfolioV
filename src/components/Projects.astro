@@ -49,16 +49,28 @@ const tech=[
         id: 10,
         name: 'Mongodb',
         image: 'https://newrelic.com/sites/default/files/2021-10/mongo_logo.jpg'
+    },
+    {
+        id: 11,
+        name: 'Typescript',
+        image: 'https://cdn-icons-png.flaticon.com/512/919/919832.png'
     }
 ]
 
 const PROJECTS=[
     {
-        title:'Payment',
-        description:'Payment using Zustand with Stripe',
-        tags:tech.filter(e=>e.name=='JS'||e.name=='React'||e.name=='Tailwind'||e.name=='Zustand'||e.name=='Node js'),
-        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1707144183/cart_wcfbis.png',   
-        gitgub:'https://github.com/JW0FSSS/Cart-Zustand'
+    title:'Good Games/E-commerce',
+    description:'website of a store where technology items are sold',
+    tags:tech.filter(e=>e.name=='Node js'||e.name=='typescript'||e.name=='Mongodb'||e.name=='React'),
+    image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1708529031/e-commerce_udgs4j.png',
+    gitgub:'https://github.com/JW0FSSS/full-stack'
+},
+    {
+        title:'Authenticate',
+        description:'Jwt authenticate',
+        tags:tech.filter(e=>e.name=='Sequelize'||e.name=='Node js'||e.name=='Docker'),
+        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',   
+        gitgub:'https://github.com/JW0FSSS/Authenticate'
     },
     {
         title:'Porfolio web',
@@ -68,24 +80,17 @@ const PROJECTS=[
         gitgub:'https://github.com/JW0FSSS/PortfolioV'
     },
     {
-        title:'Authenticate',
-        description:'Jwt authenticate',
-        tags:tech.filter(e=>e.name=='Sequelize'||e.name=='Node js'||e.name=='Docker'),
-        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',   
-        gitgub:'https://github.com/JW0FSSS/Authenticate'
+        title:'Payment',
+        description:'Payment using Zustand with Stripe',
+        tags:tech.filter(e=>e.name=='JS'||e.name=='React'||e.name=='Tailwind'||e.name=='Zustand'||e.name=='Node js'),
+        image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1707144183/cart_wcfbis.png',   
+        gitgub:'https://github.com/JW0FSSS/Cart-Zustand'
     },
-    ,{
-    title:'Testing node and docker',
-    description:'Project where im using node and docker for testing database mysql with docker',
-    tags:tech.filter(e=>e.name=='Node js'||e.name=='Docker'||e.name=='Mysql'),
-    image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1704914833/fotos/b6iphxvlglkwvorcjeio.png',
-    gitgub:'https://github.com/JW0FSSS/MYSQL'
-}
 ]
 
 ---
-{PROJECTS.map(project => (
-    <article class="border border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer hover:backdrop-blur hover:backdrop-filter-[10px] hover:bg-black/90">
+{PROJECTS.map((project,index) => (
+    <article class={`border ${index%3==0?'lg:col-span-4':'lg:col-span-2'} border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer hover:backdrop-blur hover:backdrop-filter-[10px] hover:bg-black/90`}>
         <a href={project.gitgub} target="_blank" rel="noopener noreferrer">
             <div class="w-11/12 mx-auto">
                 <img src={project.image} alt="Captura del proyecto"  class="rounded-xl w-full object-cover"/>
