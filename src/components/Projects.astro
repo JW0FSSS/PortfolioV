@@ -82,7 +82,7 @@ const PROJECTS=[
     {
         title:'X clone',
         description:'Clone of X',
-        tags:tech.filter(e=>e.name=='JS'||e.name=='React'||e.name=='Tailwind'||e.name=="Node js"||e.name=="Mysql"),
+        tags:tech.filter(e=>e.name=='JS'||e.name=='React'||e.name=="Node js"||e.name=="Mysql"),
         image:'https://res.cloudinary.com/djkmyxefd/image/upload/v1712774332/fotos/xclone_mo353v.png' ,
         gitgub:'https://github.com/JW0FSSS/X'
     },
@@ -90,13 +90,13 @@ const PROJECTS=[
 
 ---
 {PROJECTS.map((project,index) => (
-    <article class={`border ${index%3==0?'lg:col-span-4':'lg:col-span-2'} border-white p-5 rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer hover:backdrop-blur hover:backdrop-filter-[10px] hover:bg-black/90`}>
+    <article class={`border ${index%3==0?'lg:col-span-4':'lg:col-span-2'} border-white p-5 hover:text-white rounded-md transition-all ease-in-out duration-300 hover:scale-110 hover:border-none hover:cursor-pointer hover:backdrop-blur hover:backdrop-filter-[10px] hover:bg-black/90`}>
         <a href={project.gitgub} target="_blank" rel="noopener noreferrer">
             <div class="w-11/12 mx-auto">
                 <img src={project.image} alt="Captura del proyecto"  class="rounded-xl w-full object-cover"/>
             </div>
             <div class="w-11/12 mx-auto">
-                <h1 class="my-2 text-xl ">{project.title}</h1>
+                <h1 class="my-2 text-xl font-bold">{project.title}</h1>
                 <p class="my-2">{project.description}</p>
                 <div class="flex gap-x-3">
                     {project.tags.map(tag => (
