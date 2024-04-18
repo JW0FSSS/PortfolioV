@@ -7,12 +7,12 @@ import Github from '../icons/Github.astro'
 import Download from '../icons/cv.astro'
 import Projects from '../components/Projects.astro';
 import Tecnologies from '../components/Tecnologies.astro';
-
+import TecnologiesDown from "../components/TecnologiesDown.astro";
 ---
 
 <Layout title="Portafolio de Desarrollador Backend">
 	<main >
-		<section class="w-full lg:w-[900px] bg-black/10 px-10 rounded-3xl mx-auto flex lg:flex-row flex-col gap-5 lg:py-40 items-center justify-center py-4">
+			<section class="w-full lg:w-[900px] px-10 rounded-3xl mx-auto flex lg:flex-row flex-col gap-5 lg:py-40 items-center justify-center py-4">
 			<div class="order-2 ">
 
 				<h1 class="text-3xl lg:text-5xl flex gap-x-10 my-2  py-5 text-center lg:text-left">Soy Jose, Desarrollador Web</h1>
@@ -29,20 +29,21 @@ import Tecnologies from '../components/Tecnologies.astro';
 		</section>
 
 
-		<section class="w-full lg:w-[900px] bg-black/10 px-10  my-2 rounded-3xl mx-auto py-48 lg:py-72 h-full flex flex-col gap-10 items-center justify-center" id="Tecnologies">
+		<section class="w-full lg:w-[900px] px-10 overflow-hidden my-2 rounded-3xl mx-auto py-48 lg:py-72 h-full flex flex-col gap-10 items-center justify-center" id="Tecnologies">
 
 			<h1 class="text-5xl text-bold mb-10">technologies</h1>
 
-			<Tecnologies></Tecnologies>
+			<Tecnologies/>
+			<TecnologiesDown/>
 			
 		</section>
 		
-		<section class="w-full lg:w-[900px]  bg-black/10 px-10  my-2 rounded-3xl mx-auto flex flex-col gap-5 items-center lg:py-8 py-4 justify-center " id="Proyects">
+		<section class="w-full lg:w-[900px]  px-10  my-2 rounded-3xl mx-auto flex flex-col gap-5 items-center lg:py-8 py-4 justify-center " id="Proyects">
 			
 			<h1 class="text-5xl text-bold my-10">Projects</h1>
-			<div class="grid lg:grid-cols-6 grid-cols-1 gap-5 px-4">
+			<div class="grid lg:grid-cols-6 grid-cols-1 gap-5 ">
 				
-				<Projects></Projects>
+				<Projects/>
 
 			</div>
 
