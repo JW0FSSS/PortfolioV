@@ -1,9 +1,10 @@
 ---
 import Menu from "../icons/menu.astro";
 import Cancel from "../icons/cancel.astro";
+
 ---
 <header class="flex justify-between items-center w-full lg:w-[910px] mx-auto mt-2 mb-7 lg:sticky top-0 z-50 rounded-xl px-5 py-1" id="header">
-    <div class="w-12 rounded-full overflow-hidden">
+    <div class="w-12 rounded-full overflow-hidden hover:cursor-pointer" id="init">
         <img class="w-full" src="https://lh3.googleusercontent.com/ogw/AF2bZyjZ-JS05E-AAhSoFGrcQxVButQraBPqctoxuG5RQQ=s32-c-mo" alt="" >
     </div>
  
@@ -17,3 +18,15 @@ import Cancel from "../icons/cancel.astro";
     </nav>
 
 </header>
+
+<script>
+    const div=document.getElementById("init")
+
+    div.addEventListener('click',(e)=>{
+        window.scrollTo({
+            top:0,
+            left:0
+        })
+
+    })
+</script>
