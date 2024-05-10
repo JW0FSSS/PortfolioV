@@ -6,6 +6,6 @@ let downloads=download||'JoseCv'
 ---
 
 
-<a href=`${href}` download=`${downloads}` target="_blank" rel="noopener noreferrer" class=`flex justify-center items-center text-sm lg:text-lg py-1 px-2 gap-x-2 rounded-full border  ${borderColor}  transition-all ease-in-out duration-300 transform hover:scale-125 ${borderColor=="border-green-500"?"hover:bg-green-600/80":""}`>
+<a href=`${href}` download=`${downloads}` target="_blank" rel="noopener noreferrer" class=`flex justify-center items-center text-sm lg:text-lg py-1 px-2 gap-x-2 rounded-full border  ${borderColor}  transition-all ease-in-out duration-300 transform hover:scale-125 ${borderColor=="border-green-500"?"hover:bg-green-600/80":"border-orange-500"}`>
     <slot/>
 </a>
