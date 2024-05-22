@@ -65,7 +65,7 @@ import TecnologiesDown from "../components/TecnologiesDown.astro";
 		}
 
 	}
-	const Subject=new IntersectionObserver(asign,{root:null,threshold:.5,rootMargin:"0px"})
+	const Subject=new IntersectionObserver(asign,{root:null,threshold:1,rootMargin:"0px"})
 
 	for (const article of articles) {
 		Subject.observe(article)
