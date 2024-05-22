@@ -88,6 +88,10 @@ const { title } = Astro.props;
 		animation: .8s drop ease-in-out forwards;
 	}
 
+	.pulse{
+		animation: 1.2s pulse ease-in-out infinite;
+	}
+
 	@keyframes BlurEffect {
 		to{
 			background-color: rgba(238, 231, 231, 0.5);
@@ -144,6 +148,18 @@ const { title } = Astro.props;
 		100%{
 			transform: translateX(0%);
 			opacity: 1;
+		}
+	}
+
+	@keyframes pulse{
+		0%{
+			transform: scale(1);
+		}
+		50%{
+			transform: scale(1.1);
+		}
+		100%{
+			transform: scale(1);
 		}
 	}
 	
